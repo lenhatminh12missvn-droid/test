@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <link rel="icon" type="image/png" href="./logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study App by Le Nhat Minh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mac-desktop">
+  <div class="mac-menubar"><div class="mac-menu-left"><span class="apple-mark">δ</span><strong>Study App</strong><span></span><span></span><span></span><span></span><span></span></div><div class="mac-menu-right"><button id="authOpenBtn" class="auth-menu-btn">Đăng nhập Google</button><span>⌁</span><span>◉</span><span id="macMenuClock">CN 14:00</span></div></div>
+  <div class="mac-desktop-hint">STUDY WORKSPACE</div>
+  <div class="desktop-glow glow-one"></div><div class="desktop-glow glow-two"></div>
+  <aside class="sidebar glass">
+    <div class="brand"><div class="brand-icon">✦</div><div><strong>Study App</strong><small></small></div></div>
+    <div class="user-mini"><div class="avatar-face" id="miniAvatar">🧑‍🚀</div><div class="user-mini-text"><b id="miniName">Nhà thám hiểm</b><small id="miniRank">Rank C · Lv. 1</small><small id="authUserEmail" class="auth-user-email">Chưa đăng nhập</small></div><span class="online-dot"></span></div>
+    <nav class="nav">
+      <button class="nav-link active" data-page="home"><span>⌂</span>Trang chủ</button>
+      <button class="nav-link" data-page="missions"><span>◎</span>Nhiệm vụ</button>
+      <button class="nav-link" data-page="aiquiz"><span>✦</span>Quiz AI</button>
+      <button class="nav-link" data-page="leaderboard"><span>🏆</span>Bảng xếp hạng</button>
+      <button class="nav-link" data-page="dashboard"><span>▥</span>Thống kê</button>
+      <button class="nav-link" data-page="calendar"><span>▦</span>Lịch học</button>
+      <button class="nav-link" data-page="boss"><span>♜</span>Boss tuần</button>
+      <button class="nav-link" data-page="avatar"><span>◉</span>Avatar & hòm</button>
+      <button class="nav-link" data-page="shop"><span>◇</span>Cửa hàng</button>
+      <button class="nav-link" data-page="achievements"><span>♛</span>Thành tựu</button>
+      <button class="nav-link" data-page="profile"><span>☻</span>Hồ sơ học tập</button>
+      <button class="nav-link" data-page="studytools"><span>✧</span>Công cụ học</button>
+      <button class="nav-link" data-page="settings"><span>⚙</span>Cài đặt</button>
+      <button class="nav-link" data-page="chat">
+  <span>💬</span>Chat
+</button>
+
+
+      
+    </nav>
+    <div class="sidebar-bottom"><div class="streak-chip">🔥 <b id="sideStreak">0</b> ngày streak</div><small>Học đều, tiến bộ mỗi ngày.</small></div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar glass">
+      <div class="breadcrumbs"><span class="crumb-dot"></span><span id="pageCrumb">Trang chủ</span></div>
+      <div class="top-clock"><strong id="clock">00:00:00</strong><span id="date">Thứ Hai, 1 tháng 1</span></div>
+      <div class="top-actions"><div class="coin-pill">🪙 <b id="topCoins">0</b> <span>S-Coins</span></div><button class="icon-button" id="quickSettings" title="Cài đặt">⚙</button><div class="top-avatar" id="topAvatar">🧑‍🚀</div></div>
+    </header>
+
+    ```html
+<section class="page" id="page-chat">
+  <div class="page-heading">
+    <p class="eyebrow">STUDY COMMUNITY</p>
+    <h1>💬 Chat học tập</h1>
+    <p class="muted">Nhắn tin riêng hoặc trao đổi trong nhóm học tập.</p>
+  </div>
+
+  <div class="chat-layout panel glass">
+    <aside class="chat-sidebar">
+      <div class="chat-toolbar">
+        <h2>Cuộc trò chuyện</h2>
+        <button id="chatNewGroup" class="primary-btn" type="button">
+          + Tạo nhóm
+        </button>
+      </div>
+      <form id="chatDirectForm" class="chat-direct-form">
+        <input id="chatTargetUid" placeholder="UID người muốn chat" required>
+        <button class="secondary-btn" type="submit">Chat riêng</button>
+      </form>
+      <div id="chatStatus" class="muted">Đang chờ đăng nhập...</div>
+      <div id="chatConversationList" class="chat-conversation-list"></div>
+    </aside>
+
+    <section class="chat-main">
+      <header class="chat-header">
+        <div>
+          <h2 id="chatTitle">Chọn cuộc trò chuyện</h2>
+          <p id="chatSubtitle" class="muted">Tin nhắn được lưu trên Firestore.</p>
+        </div>
+      </header>
+      <div id="chatMessages" class="chat-messages">
+        <div class="empty-state">Chọn một cuộc trò chuyện để bắt đầu.</div>
+      </div>
+      <form id="chatSendForm" class="chat-send-form">
+        <input id="chatMessageInput" maxlength="2000"
+          placeholder="Nhập tin nhắn..." autocomplete="off" required>
+        <button class="primary-btn" type="submit">Gửi</button>
+      </form>
+    </section>
+  </div>
+</section>
+```
+    <section class="page active" id="page-home">
+      <div class="welcome-row"><div><p class="eyebrow">WORKSPACE / HỌC TẬP</p><h1>Chào mừng trở lại, <span id="welcomeName">Nhà thám hiểm</span> <span class="wave">✦</span></h1><p class="muted">Mỗi phiên học là một bước tiến trong hành trình của bạn.</p></div><div class="date-card glass"><span>HÔM NAY</span><strong id="dateLong">--</strong><small id="dailyQuote">Tiến bộ nhỏ tạo nên kết quả lớn.</small></div></div>
+      <div class="stats-grid">
+        <article class="stat-card glass"><div class="stat-icon purple">✦</div><span>Level hiện tại</span><strong>Lv. <b id="levelStat">1</b></strong><div class="mini-progress"><i id="levelMiniBar"></i></div><small><b id="xpStat">0</b> / <span id="xpNeeded">100</span> XP</small></article>
+        <article class="stat-card glass"><div class="stat-icon orange">🔥</div><span>Streak học tập</span><strong><b id="streakStat">0</b> ngày</strong><small id="streakHint">Bắt đầu streak hôm nay</small></article>
+        <article class="stat-card glass"><div class="stat-icon cyan">◷</div><span>Tổng thời gian học</span><strong><b id="totalMinutes">0</b> phút</strong><small>Tích lũy qua các phiên hoàn thành</small></article>
+        <article class="stat-card glass"><div class="stat-icon green">🪙</div><span>S-Coins</span><strong id="coinStat">0</strong><small>Nhận coin khi hoàn thành phiên học</small></article>
+      </div>
+      <div class="home-grid">
+        <article class="panel glass focus-panel"><div class="panel-heading"><div><p class="eyebrow">FOCUS SESSION</p><h2>⏱️ Góc tập trung</h2></div><span class="live-tag"><i></i> REAL-TIME</span></div>
+          <div class="timer-wrap"><div class="timer-ring" id="timerRing"><div class="timer-inner"><strong id="studyTimer">25:00</strong><span id="timerMode">SẴN SÀNG</span></div></div></div>
+          <div class="timer-controls"><label>Thời gian học <div class="input-suffix"><input type="number" id="studyMinutes" value="25" min="1" max="240"><span>phút</span></div></label><label>Chu kỳ nghỉ <select id="breakMinutes"><option value="5">5 phút</option><option value="10">10 phút</option><option value="15">15 phút</option></select></label></div>
+          <div class="timer-progress"><div id="timerProgress"></div></div><div class="timer-buttons"><button class="primary-btn" id="startBtn">▶ Bắt đầu học</button><button class="secondary-btn" id="pauseBtn" disabled>Ⅱ Tạm dừng</button><button class="quiet-btn" id="resetBtn">↺ Đặt lại</button><button class="secondary-btn" id="focusModeBtn" type="button">⛶ Focus Mode</button></div>
+          <p class="hint" id="timerHint">Hoàn thành phiên học để nhận XP và S-Coins. Hãy nghỉ ngơi khi cần nhé.</p>
+        </article>
+        <div class="right-stack">
+          <article class="panel glass"><div class="panel-heading"><div><p class="eyebrow">YOUR PROGRESS</p><h2>🏆 Tiến trình cấp độ</h2></div><span class="rank-badge" id="rankBadge">RANK C</span></div><div class="level-row"><div class="level-orb" id="levelOrb">1</div><div class="level-details"><strong id="levelLabel">Level 1</strong><span id="xpLabel">0 / 100 XP</span><div class="wide-progress"><i id="xpBar"></i></div></div></div><div class="panel-foot"><span>Quiz tốt sẽ nâng rank</span><button class="text-btn" data-goto="missions">Xem nhiệm vụ ↗</button></div></article>
+          <article class="panel glass"><div class="panel-heading"><div><p class="eyebrow">DAILY QUESTS</p><h2>🎯 Nhiệm vụ hôm nay</h2></div><span class="count-badge" id="questCount">0/3</span></div><div class="quest-list" id="homeQuestList"></div><button class="secondary-btn full-btn" data-goto="missions">Xem tất cả nhiệm vụ</button></article>
+        </div>
+      </div>
+      <article class="panel glass bottom-panel"><div class="panel-heading"><div><p class="eyebrow">RECENT ACTIVITY</p><h2>📈 Hoạt động gần đây</h2></div><button class="text-btn" data-goto="dashboard">Mở thống kê ↗</button></div><div id="recentActivity" class="activity-list"><div class="empty-state">Chưa có hoạt động. Bắt đầu phiên học đầu tiên nhé!</div></div></article>
+    </section>
+
+    <section class="page" id="page-missions"><div class="page-heading"><p class="eyebrow">QUEST BOARD</p><h1>🎯 Nhiệm vụ</h1><p class="muted">Nhiệm vụ tự làm mới mỗi ngày theo ngày trên thiết bị.</p></div><div class="stats-grid compact-stats" id="missionSummary"></div><div class="mission-grid" id="missionList"></div></section>
+
+    <section class="page" id="page-aiquiz">
+      <div class="page-heading"><p class="eyebrow">AI QUIZ GENERATOR</p><h1>✦ Tạo quiz bằng AI</h1><p class="muted">Tạo câu hỏi theo lớp, môn học và chủ đề. Study RPG lưu lịch sử câu hỏi để tránh lặp lại.</p></div>
+      <div class="aiquiz-layout">
+        <article class="panel glass">
+          <div class="panel-heading"><h2>⚙️ Thiết lập đề</h2><span class="muted">Gemini AI</span></div>
+          <form id="aiQuizForm" class="aiquiz-form">
+            <label>Lớp / cấp học<select id="aiQuizGrade"><option value="Lớp 6">Lớp 6</option><option value="Lớp 7">Lớp 7</option><option value="Lớp 8" selected>Lớp 8</option><option value="Lớp 9">Lớp 9</option><option value="Lớp 10">Lớp 10</option><option value="Lớp 11">Lớp 11</option><option value="Lớp 12">Lớp 12</option><option value="Tự học / nâng cao">Tự học / nâng cao</option></select></label>
+            <label>Môn học<select id="aiQuizSubject"><option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>Vật lí</option><option>Hóa học</option><option>Sinh học</option><option>Lịch sử</option><option>Địa lí</option><option>Tin học</option><option>Khoa học tự nhiên</option><option>Kiến thức tổng hợp</option></select></label>
+            <label>Chủ đề / phần kiến thức<input id="aiQuizTopic" maxlength="180" placeholder="Ví dụ: Phân thức đại số, định lý Thales..."></label>
+            <div class="aiquiz-row"><label>Số câu<select id="aiQuizCount"><option value="5">5 câu</option><option value="10" selected>10 câu</option><option value="15">15 câu</option></select></label><label>Độ khó<select id="aiQuizDifficulty"><option value="Cơ bản">Cơ bản</option><option value="Trung bình" selected>Trung bình</option><option value="Nâng cao">Nâng cao</option><option value="Trộn mức độ">Trộn mức độ</option></select></label></div>
+            <label>Gemini API key <input id="aiQuizKey" type="password" autocomplete="off" placeholder="Dán API key của bạn để bật AI thật"></label>
+            <p class="muted aiquiz-note">API key được lưu trên trình duyệt của thiết bị này để lần sau không cần nhập lại. Key không được đưa vào bản sao lưu hay đồng bộ lên bảng xếp hạng. Không chia sẻ key và chỉ dùng trên thiết bị tin cậy.</p><small id="aiQuizKeyStatus" class="muted" aria-live="polite">Chưa có API key được lưu.</small><div class="aiquiz-actions"><button class="secondary-btn" type="button" id="aiQuizKeySave">Lưu API key</button><button class="quiet-btn" type="button" id="aiQuizKeyClear">Xóa API key đã lưu</button><button class="quiet-btn" type="button" id="aiQuizKeyToggle">Hiện key</button></div>
+            <button class="primary-btn" id="aiQuizGenerate" type="submit">✦ Tạo quiz mới</button>
+            <a class="text-btn" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Lấy Gemini API key ↗</a>
+          </form>
+          <div class="aiquiz-history"><strong>📚 Lịch sử chống trùng</strong><span id="aiQuizHistoryCount">0 câu đã ghi nhận</span><button class="quiet-btn" type="button" id="aiQuizClearHistory">Xóa lịch sử câu hỏi</button></div>
+        </article>
+        <article class="panel glass aiquiz-result-panel"><div class="panel-heading"><h2>🧠 Bài quiz của bạn</h2><span class="muted" id="aiQuizStatus">Sẵn sàng</span></div><div id="aiQuizOutput"><div class="empty-state"><strong>Chưa có quiz</strong><p>Chọn lớp, môn, chủ đề rồi nhấn “Tạo quiz mới”.</p></div></div></article>
+      </div>
+    </section>
+
+
+
+
+
+
+    
+
+    
+    <section class="page" id="page-leaderboard">
+      <div class="page-heading"><p class="eyebrow">WEEKLY LEAGUE</p><h1>🏆 Bảng xếp hạng</h1><p class="muted">Thi đua bằng XP học tập trong 7 ngày gần nhất. Chỉ hiển thị tên và tiến độ công khai, không hiển thị email.</p></div>
+      <div class="leaderboard-hero panel glass"><div><span class="eyebrow">LEAGUE SEASON</span><h2>🚀 Study League</h2><p class="muted">Học đều mỗi ngày để leo hạng cùng bạn bè.</p></div><div class="league-pill" id="myLeague">Chưa xếp hạng</div></div>
+      <article class="panel glass leaderboard-panel"><div class="panel-heading"><div><h2>⭐ Top người học</h2><p class="muted">Xếp theo XP học được trong 7 ngày gần nhất</p></div><button class="secondary-btn" id="refreshLeaderboard" type="button">↻ Làm mới</button></div><div id="leaderboardStatus" class="muted leaderboard-status">Đăng nhập Google để xem bảng xếp hạng.</div><div id="leaderboardList" class="leaderboard-list"><div class="empty-state">Bảng xếp hạng sẽ xuất hiện ở đây.</div></div><p class="muted leaderboard-footnote">Bảng xếp hạng hiện là phiên bản cơ bản; điểm do trình duyệt gửi lên chưa có cơ chế chống gian lận phía máy chủ.</p></article>
+    </section>
+
+    <section class="page" id="page-dashboard"><div class="page-heading"><p class="eyebrow">ANALYTICS</p><h1>📊 Dashboard</h1><p class="muted">Tổng hợp quá trình học tập của bạn trên thiết bị này.</p></div><div class="stats-grid" id="dashboardStats"></div><div class="dashboard-grid"><article class="panel glass"><div class="panel-heading"><h2>📅 7 ngày gần nhất</h2><span class="muted">Phút học/ngày</span></div><div class="chart" id="weeklyChart"></div></article><article class="panel glass"><div class="panel-heading"><h2>🏅 Kỷ lục cá nhân</h2></div><div id="personalRecords" class="record-list"></div></article></div><article class="panel glass"><div class="panel-heading"><h2>🗂️ Lịch sử học tập</h2><button class="text-btn" id="exportBtn">Xuất dữ liệu JSON ↗</button></div><div class="table-wrap"><table><thead><tr><th>Ngày / giờ</th><th>Hoạt động</th><th>Thời lượng</th><th>Phần thưởng</th></tr></thead><tbody id="historyTable"></tbody></table></div></article></section>
+
+    <section class="page" id="page-boss"><div class="page-heading"><p class="eyebrow">WEEKLY CHALLENGE</p><h1>♜ Boss tuần</h1><p class="muted">Đánh bại boss bằng thời gian học hoàn thành. Tiến độ tính theo dữ liệu trên máy này.</p></div><article class="boss-card glass"><div class="boss-art">🐉</div><div class="boss-info"><span class="boss-tag">BOSS CẤP TUẦN</span><h2>Rồng Trì Hoãn</h2><p>Hoàn thành 10 phiên học trong tuần để đánh bại boss và nhận phần thưởng.</p><div class="boss-progress"><div><span id="bossProgressText">0 / 10 phiên</span><b id="bossPercent">0%</b></div><div class="wide-progress"><i id="bossBar"></i></div></div><div class="boss-reward">🎁 Phần thưởng: <b>250 S-Coins + 100 XP</b></div><button class="primary-btn" id="bossClaimBtn">Nhận thưởng boss</button><small id="bossStatus" class="muted">Boss làm mới vào đầu tuần.</small></div></article></section>
+
+    <section class="page" id="page-avatar"><div class="page-heading"><p class="eyebrow">CHARACTER</p><h1>◉ Avatar & hòm vật phẩm</h1><p class="muted">Mở hòm để nhận avatar ngẫu nhiên. Tất cả vật phẩm demo được lưu trong trình duyệt.</p></div><div class="avatar-layout"><article class="panel glass avatar-showcase"><div class="avatar-large" id="largeAvatar">🧑‍🚀</div><h2 id="avatarName">Nhà thám hiểm</h2><p class="muted">Avatar đang sử dụng</p><div class="inventory-strip" id="inventoryStrip"></div></article><article class="panel glass"><div class="panel-heading"><h2>🎁 Hòm bí ẩn</h2><span class="muted">Tốn 100 S-Coins / hòm</span></div><div class="chest-art" id="chestArt">🧰</div><p class="muted centered">Common 60% · Rare 25% · Epic 12% · Legendary 3%</p><button class="primary-btn full-btn" id="openChestBtn">Mở hòm · 100 🪙</button><div id="chestResult" class="chest-result"></div><h3 class="subheading">Bộ sưu tập avatar</h3><div id="avatarCollection" class="avatar-collection"></div></article></div></section>
+
+    <section class="page" id="page-shop"><div class="page-heading"><p class="eyebrow">ITEM STORE</p><h1>◇ Cửa hàng</h1><p class="muted">Dùng S-Coins để mua vật phẩm trang trí. Đây là cửa hàng mô phỏng offline.</p></div><div class="shop-balance glass">Số dư của bạn <strong>🪙 <span id="shopCoins">0</span> S-Coins</strong></div><div class="shop-grid" id="shopGrid"></div><article class="panel glass"><h2>🎒 Túi đồ của bạn</h2><div id="ownedItems" class="owned-list"></div></article></section>
+
+    <section class="page" id="page-achievements"><div class="page-heading"><p class="eyebrow">TROPHY ROOM</p><h1>♛ Thành tựu</h1><p class="muted">Mở khóa thành tựu bằng các cột mốc học tập.</p></div><div class="achievement-grid" id="achievementGrid"></div></section>
+
+    <section class="page" id="page-profile"><div class="page-heading"><p class="eyebrow">PLAYER PROFILE</p><h1>☻ Hồ sơ học tập</h1><p class="muted">Tùy chỉnh thông tin và mục tiêu học tập.</p></div><form class="panel glass profile-form" id="profileForm"><label>Tên hiển thị<input id="profileName" maxlength="30" placeholder="Tên của bạn"></label><label>Cấp học<select id="schoolLevel"><option>Tiểu học</option><option selected>THCS</option><option>THPT</option><option>Đại học</option><option>Tự học</option></select></label><label>Lớp<input id="schoolClass" placeholder="Ví dụ: 8" maxlength="12"></label><label>Mục tiêu / kỳ thi<input id="examName" placeholder="Ví dụ: Thi học kỳ 1"></label><label>Ngày thi (không bắt buộc)<input type="date" id="examDate"></label><div class="exam-countdown" id="examCountdown">Chọn ngày thi để xem đếm ngược.</div><button class="primary-btn" type="submit">Lưu hồ sơ</button><span id="profileSaved" class="muted"></span></form></section>
+
+    <section class="page" id="page-studytools">
+      <div class="page-heading"><p class="eyebrow">PERSONAL WEB LINKS</p><h1>✧ Liên kết trang web</h1><p class="muted">Tự thêm các website bạn hay dùng và mở chúng từ bên trong Study RPG.</p></div>
+      <article class="panel glass studytools-panel">
+        <form id="websiteForm" class="website-form">
+          <label>Tên trang web<input id="websiteName" maxlength="40" placeholder="Ví dụ: Từ điển, lớp học trực tuyến..." required></label>
+          <label>Địa chỉ website<input id="websiteUrl" type="url" placeholder="https://example.com" required></label>
+          <button class="primary-btn" type="submit">＋ Thêm liên kết</button>
+        </form>
+        <p class="muted settings-note">Liên kết được lưu trên trình duyệt của máy này. Chỉ thêm website bạn tin tưởng. Một số trang web chặn việc hiển thị trong khung nhúng; khi đó hãy dùng nút mở tab mới.</p>
+        <div class="website-layout">
+          <section class="website-bookmarks"><div class="panel-heading"><h2>🔖 Liên kết của bạn</h2><span class="muted" id="websiteCount">0 trang</span></div><input id="websiteSearch" class="website-search" type="search" placeholder="Tìm website đã lưu…"><div id="websiteList" class="website-list"></div></section>
+          <section class="website-preview"><div class="website-preview-head"><div><h2 id="websitePreviewTitle">Khu vực mở website</h2><p id="websitePreviewHint" class="muted">Thêm một liên kết, sau đó chọn “Mở trong Study RPG”.</p></div><a class="secondary-btn website-open-tab" id="websiteOpenTab" href="about:blank" target="_blank" rel="noopener noreferrer" hidden>Mở tab mới ↗</a></div>
+            <div class="website-frame-wrap"><iframe id="websiteFrame" title="Website đã chọn" src="about:blank" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="website-empty" id="websiteEmpty"><span>🌐</span><strong>Chưa chọn website</strong><small>Website được nhúng ở đây nếu cho phép.</small></div></div>
+          </section>
+        </div>
+      </article>
+    </section>
+
+
+    <section class="page" id="page-calendar">
+      <div class="page-heading"><p class="eyebrow">STUDY PLANNER</p><h1>🗓️ Lịch học</h1><p class="muted">Lên lịch ôn tập, bài kiểm tra và mục tiêu học tập. Dữ liệu tự lưu trên trình duyệt.</p></div>
+      <div class="calendar-layout">
+        <article class="panel glass calendar-panel">
+          <div class="calendar-toolbar"><button class="secondary-btn" id="calendarPrev" type="button">← Tháng trước</button><h2 id="calendarMonthLabel">Tháng</h2><button class="secondary-btn" id="calendarNext" type="button">Tháng sau →</button></div>
+          <div class="calendar-grid calendar-weekdays"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </article>
+        <article class="panel glass calendar-form-panel">
+          <h2>＋ Thêm kế hoạch</h2>
+          <form id="calendarForm" class="calendar-form">
+            <label>Việc cần làm<input id="calendarTitle" maxlength="90" placeholder="Ví dụ: Ôn phương trình" required></label>
+            <label>Môn học<select id="calendarSubject"><option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>KHTN</option><option>Lịch sử - Địa lý</option><option>Khác</option></select></label>
+            <label>Ngày<input type="date" id="calendarDate" required></label>
+            <label>Giờ (không bắt buộc)<input type="time" id="calendarTime"></label>
+            <button class="primary-btn" type="submit">Lưu kế hoạch</button>
+          </form>
+          <div class="panel-heading calendar-list-heading"><h2 id="calendarSelectedLabel">Kế hoạch sắp tới</h2><span class="muted" id="calendarEventCount">0 mục</span></div>
+          <div class="calendar-event-list" id="calendarEventList"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="page-settings"><div class="page-heading"><p class="eyebrow">PREFERENCES</p><h1>⚙ Cài đặt</h1><p class="muted">Cá nhân hóa giao diện và dữ liệu Study RPG.</p></div><div class="settings-grid"><article class="panel glass"><h2>🎨 Giao diện</h2>
+<label class="setting-row">Màu nhấn<select id="accentSelect"><option value="blue">macOS Blue</option><option value="purple">Violet</option><option value="green">Neon Green</option><option value="pink">Rose</option></select></label>
+<label class="setting-row">Hiệu ứng LED neon <input type="checkbox" id="glowToggle" checked></label>
+<label class="setting-row">Chế độ giảm chuyển động <input type="checkbox" id="motionToggle"></label>
+<label class="setting-row">Âm thanh hoàn thành <input type="checkbox" id="soundToggle"></label></article><article class="panel glass"><h2>💾 Dữ liệu</h2><p class="muted settings-note">Dữ liệu lưu trong localStorage của trình duyệt hiện tại; chưa đồng bộ giữa các thiết bị hoặc tài khoản.</p><button class="secondary-btn" id="backupBtn">Tải bản sao lưu đầy đủ</button><label class="import-backup-label">Khôi phục từ bản sao lưu JSON<input type="file" id="importBackupFile" accept="application/json,.json"></label><small class="muted">Bản sao lưu gồm tiến độ RPG, website đã lưu và lịch học. Khôi phục sẽ thay thế dữ liệu hiện tại.</small><button class="danger-btn" id="resetDataBtn">Đặt lại toàn bộ dữ liệu</button></article></div></section>
+
+    <footer class="footer"><span>✦ Study RPG Ultra</span><span>Học tập • Tiến bộ • Lặp lại</span></footer>
+  </main>
+  <div class="mac-dock" aria-label="Dock điều hướng Study RPG">
+    <button class="dock-icon finder" data-dock-page="home" title="Trang chủ">⌂</button>
+    <button class="dock-icon focus" data-dock-page="home" title="Pomodoro / Tập trung">⏱</button>
+    <button class="dock-icon missions" data-dock-page="missions" title="Nhiệm vụ">◎</button>
+    <button class="dock-icon" data-dock-page="aiquiz" title="Quiz AI">✦</button>
+    <button class="dock-icon stats" data-dock-page="dashboard" title="Thống kê">▥</button>
+    <button class="dock-icon calendar-dock" data-dock-page="calendar" title="Lịch học">▦</button>
+    <button class="dock-icon boss-dock" data-dock-page="boss" title="Boss tuần">♜</button>
+    <button class="dock-icon links" data-dock-page="studytools" title="Liên kết website">🌐</button>
+    <button class="dock-icon shop-dock" data-dock-page="shop" title="Cửa hàng">◇</button>
+    <button class="dock-icon achievements-dock" data-dock-page="achievements" title="Thành tựu">♛</button>
+    <span class="dock-separator"></span>
+    <button class="dock-icon leaderboard-dock" data-dock-page="leaderboard" title="Bảng xếp hạng">🏆</button>
+    <button class="dock-icon avatar-dock" data-dock-page="avatar" title="Avatar & hòm">🚀</button>
+    <button class="dock-icon profile-dock" data-dock-page="profile" title="Hồ sơ học tập">👤</button>
+    <button class="dock-icon settings" data-dock-page="settings" title="Cài đặt">⚙</button>
+  </div>
+  <section id="authGate" class="auth-gate" aria-modal="true" role="dialog" aria-labelledby="authTitle">
+    <div class="auth-card glass">
+      <div class="auth-brand-icon">✦</div><p class="eyebrow">STUDY RPG ACCOUNT</p>
+      <h2 id="authTitle">Đăng nhập vào Study RPG</h2>
+      <p class="muted">Dùng tài khoản Google để xác thực danh tính trong ứng dụng.</p>
+      <button id="googleSignInBtn" class="google-signin-btn"><span class="google-g">G</span> Tiếp tục với Google</button>
+      <p id="authStatus" class="auth-status" aria-live="polite">Bạn có thể tiếp tục sử dụng ứng dụng mà không đăng nhập.</p>
+      <div class="auth-actions"><button id="continueGuestBtn" class="secondary-btn">Tiếp tục với tư cách khách</button><button id="googleSignOutBtn" class="secondary-btn" hidden>Đăng xuất</button></div>
+      <small class="muted auth-note">Đăng nhập hiện xác thực tài khoản; dữ liệu học tập chưa được đồng bộ lên đám mây.</small>
+    </div>
+  </section>
+  <div class="toast" id="toast"></div>
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal glass"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+  <script src="main.js"></script>
+  <script src="enhancements.js"></script>
+  <script type="module" src="firebase-auth.js"></script>
+<script type="module" src="chat.js"></script>
+</body>
+</html>
